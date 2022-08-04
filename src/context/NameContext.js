@@ -1,3 +1,6 @@
+//Using Reacts context API to make globally available data for components 
+//Please check https://reactjs.org/docs/context.html 
+//https://reactjs.org/docs/hooks-reference.html#usecontext
 import React,{ useContext,useState } from "react";
 
 const NameContext = React.createContext();
@@ -8,7 +11,7 @@ export const useName = ()=>{
    
    export const NameProvider = ({children})=>{
 
-    //State for form field name//
+    //State for form field name
     const [name, setName] = useState();
 
     //State maintaining an array list of names
@@ -20,12 +23,12 @@ export const useName = ()=>{
 
 
 
-    //To change state name on event change//
+    //To change state name on event change
     const fieldName =(nameValue)=>{
       return setName(nameValue);
     }
 
-    //To change state name on event change//
+    //To change state name on event change
     const fieldEditName =(nameValue)=>{
       return setNameEdit(nameValue);
     }
@@ -38,14 +41,14 @@ export const useName = ()=>{
       return (editModal)?setEditModal(false):setEditModal(true);
     }
 
-      //Adding value to nameList//
+      //Adding value to nameList
     const addValue=(e)=>
     {
         e.preventDefault();
         setNameList([...nameList,name]);
         return setName('');
     }
-
+     //
      const deleteName =()=>{
       toggleEditModal();
       return nameList.splice(editIndex,1);
@@ -65,7 +68,7 @@ export const useName = ()=>{
 
      } 
 
-    //Data and methods  
+    //Data and methods as props
     const value = {
       name,nameEdit,nameList,editModal,fieldName,addValue,deleteName,editName,toggleEditModal,fieldEditName,saveEdit
      }

@@ -6,10 +6,10 @@ function AddName()
 {
   const {name,fieldName,addValue,nameList,deleteName,editName,editModal} = useName();
   return (
-       <div onSubmit={(e)=>addValue(e)} class="relative w-1/2 items-center  p-8">
+       <div onSubmit={(e)=>addValue(e)} class="relative w-full items-center  p-8">
             <h1 class="m-8">Name App</h1>
             <form class="flex mb-12">
-                <input onChange={(e)=> fieldName(e.target.value)} value={name} class="bg-transparent  w-1/2 text-gray-700 mr-3 py-1 px-2 leading-tight" type="text" placeholder="Enter Your Name"/>
+                <input onChange={(e)=> fieldName(e.target.value)} value={name} class="bg-transparent  w-fit text-gray-700 mr-3 py-1 px-2 leading-tight" type="text" placeholder="Enter Your Name"/>
                 <button class="bg-slate-700 p-2 py-1">
                    Add
                 </button>
@@ -26,7 +26,7 @@ function AddName()
                 ):<></>
               }
             </div>
-            {/* render modal component conditionally */}
+            {/* render modal(window) component conditionally */}
             {(editModal)?<EditName/>:<></>}
         </div>
   )

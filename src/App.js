@@ -1,7 +1,7 @@
 import AddName from "./components/AddName";
 import EditName from "./components/EditName";
 import NameView from "./components/NameView";
-import { NameProvider, useName } from "./context/NameContext";
+import { NameProvider} from "./context/NameContext";
 
 function App() {
   return (
@@ -9,7 +9,6 @@ function App() {
        <NameProvider>
         <AddName/>
         <NameView/>
-        {/* {(editModal)?<EditName/>:<></>} */}
         </NameProvider>
     </div>
   );
