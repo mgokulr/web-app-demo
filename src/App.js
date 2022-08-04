@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import AddName from "./components/AddName";
+import EditName from "./components/EditName";
+import NameView from "./components/NameView";
+import { NameProvider, useName } from "./context/NameContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="flex w-screen h-screen">
+       <NameProvider>
+        <AddName/>
+        <NameView/>
+        {/* {(editModal)?<EditName/>:<></>} */}
+        </NameProvider>
     </div>
   );
 }
